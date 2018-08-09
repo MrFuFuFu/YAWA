@@ -8,9 +8,8 @@ YAWA - Yet another Weather app
 * Search a city's weather (Today & Forecast)
 * Weather Icon
 * Landscape & portrait
+* iPhone & iPad
 
-## Screenshots
+## Screenshot
 
-![HomePage](./Images/IMG_1465.PNG)
-
-![TodayPage](./Images/IMG_1466.PNG)
+![Screenshot](./Images/screenshot.png)
