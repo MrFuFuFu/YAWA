@@ -50,6 +50,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableViewCell", for: indexPath) as? WeatherTableViewCell
         if let cell = cell as? WeatherTableViewCell {
             cell.weathers = arrayWeathers[indexPath.row]
+            cell.row = indexPath.row
         } else {
             cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
         }

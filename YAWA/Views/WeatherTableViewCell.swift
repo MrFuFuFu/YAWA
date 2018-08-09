@@ -9,6 +9,7 @@
 import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var labelDay: UILabel!
     @IBOutlet weak var weatherOvernight: WeatherView!
     @IBOutlet weak var weatherMorning: WeatherView!
@@ -44,7 +45,18 @@ class WeatherTableViewCell: UITableViewCell {
         }
     }
     
+    var row: Int? {
+        didSet {
+            if let row = row, row < 6 {
+                shadowView.backgroundColor = UIColor.randomColor[row]
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        shadowView.clipsToBounds = true
+        shadowView.layer.cornerRadius = 8
+        shadowView.addShadow()
     }
 }
