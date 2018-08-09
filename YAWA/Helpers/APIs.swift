@@ -15,8 +15,8 @@ final class APIs {
 //    private let url: String = "http://api.openweathermap.org/data/2.5/forecast?q=Auckland&mode=json&units=metric&APPID=399a5bbd96e27a24b8f8c656e8c30ff4"
     private let url: String = "http://api.openweathermap.org/data/2.5/forecast?mode=json&units=metric&APPID=399a5bbd96e27a24b8f8c656e8c30ff4"
     
-    func requestForecastBy(city: String, completion: @escaping ([[Weather]]?, Error?) -> Void) {
-        let url = self.url + "&q=\(city)"
+    func requestForecastBy(locality: String, completion: @escaping ([[Weather]]?, Error?) -> Void) {
+        let url = self.url + "&q=\(locality)"
         Alamofire.request(url).responseJSON { response in
             switch response.result {
             case .success:

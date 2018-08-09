@@ -7,27 +7,42 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
+//    let locationManager = CLLocationManager()
     
     var arrayWeathers: [[Weather]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.searchController = searchController
+        self.navigationItem.searchController?.searchBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "WeatherTableViewCell")
-        request(city: "Auckland")
+        
+        initLocationService()
+        locationRequest()
     }
     
-    private func request(city: String) {
-        APIs.shared.requestForecastBy(city: city) { [weak self] (arrayWeathers, error) in
+    private func locationRequest() {
+        LocationServices.shared.getAdress { [weak self] locality in
+            guard let `self` = self else { return }
+            `self`.title = locality
+            `self`.weatherRequest(locality: locality)
+        }
+    }
+    
+    private func weatherRequest(locality: String) {
+        print("weatherRequest", locality)
+        APIs.shared.requestForecastBy(locality: locality) { [weak self] (arrayWeathers, error) in
             guard let `self` = self else { return }
             if let arrayWeathers = arrayWeathers {
+                `self`.title = locality
                 `self`.arrayWeathers = arrayWeathers
                 `self`.tableView.reloadData()
             } else if let error = error {
@@ -37,6 +52,8 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -56,5 +73,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell?.selectionStyle = .none
         return cell!
+    }
+}
+
+extension ViewController: CLLocationManagerDelegate {
+    func initLocationService(){
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            locationRequest()
+        }
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else {
+            return
+        }
+        weatherRequest(locality: text)
     }
 }

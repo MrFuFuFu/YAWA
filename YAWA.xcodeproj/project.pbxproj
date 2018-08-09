@@ -23,6 +23,7 @@
 		F754FDC5211C0D0D00E20094 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDC4211C0D0D00E20094 /* Utilities.swift */; };
 		F754FDC9211C3A0100E20094 /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F754FDC8211C39B100E20094 /* weathericons-regular-webfont.ttf */; };
 		F754FDCB211C3A2900E20094 /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDCA211C3A2900E20094 /* WeatherIcon.swift */; };
+		F754FDCD211C448600E20094 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDCC211C448600E20094 /* LocationServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		F754FDC4211C0D0D00E20094 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F754FDC8211C39B100E20094 /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 		F754FDCA211C3A2900E20094 /* WeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
+		F754FDCC211C448600E20094 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				F754FDC2211C082400E20094 /* APIs.swift */,
 				F754FDC4211C0D0D00E20094 /* Utilities.swift */,
 				F754FDCA211C3A2900E20094 /* WeatherIcon.swift */,
+				F754FDCC211C448600E20094 /* LocationServices.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				F754FDBC211BFE7A00E20094 /* ViewController.swift in Sources */,
 				F754FDB9211BFBB600E20094 /* WeatherView.swift in Sources */,
 				F754FDC5211C0D0D00E20094 /* Utilities.swift in Sources */,
+				F754FDCD211C448600E20094 /* LocationServices.swift in Sources */,
 				F754FDBE211C022A00E20094 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
