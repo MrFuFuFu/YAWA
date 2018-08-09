@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" rowHeight="132" id="KGk-i7-Jjw" customClass="WeatherTableViewCell" customModule="YAWA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="131.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Udf-WE-Fgr">
+                        <rect key="frame" x="102.5" y="12" width="115.5" height="18"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJx-Af-sM4">
+                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 Aug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnC-jX-yPV">
+                                <rect key="frame" x="75.5" y="0.0" width="40" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uhF-y9-ula">
+                        <rect key="frame" x="12" y="49.5" width="296" height="70"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTI-yF-aqA" customClass="WeatherView" customModule="YAWA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="70.5" height="70"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZTI-yF-aqA" secondAttribute="height" multiplier="1:1" id="D9a-Lt-oUL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zsk-jU-NP3" customClass="WeatherView" customModule="YAWA" customModuleProvider="target">
+                                <rect key="frame" x="75.5" y="0.0" width="70.5" height="70"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Zsk-jU-NP3" secondAttribute="height" multiplier="1:1" id="emP-Gu-Aco"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcX-cI-A4U" customClass="WeatherView" customModule="YAWA" customModuleProvider="target">
+                                <rect key="frame" x="151" y="0.0" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wcX-cI-A4U" secondAttribute="height" multiplier="1:1" id="K8x-yB-v08"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPj-nW-17y" customClass="WeatherView" customModule="YAWA" customModuleProvider="target">
+                                <rect key="frame" x="226" y="0.0" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XPj-nW-17y" secondAttribute="height" multiplier="1:1" id="vL6-Zj-EdQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Zsk-jU-NP3" firstAttribute="width" secondItem="Zsk-jU-NP3" secondAttribute="height" multiplier="1:1" id="7Z9-tp-MBb"/>
+                            <constraint firstItem="XPj-nW-17y" firstAttribute="width" secondItem="XPj-nW-17y" secondAttribute="height" multiplier="1:1" id="eRE-tm-WEI"/>
+                            <constraint firstItem="wcX-cI-A4U" firstAttribute="width" secondItem="wcX-cI-A4U" secondAttribute="height" multiplier="1:1" id="hgV-rF-3C5"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="uhF-y9-ula" secondAttribute="bottom" constant="12" id="4Pw-A0-u1Y"/>
+                    <constraint firstAttribute="trailing" secondItem="uhF-y9-ula" secondAttribute="trailing" constant="12" id="H1t-2X-mdw"/>
+                    <constraint firstItem="Udf-WE-Fgr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="OPO-ZJ-DMX"/>
+                    <constraint firstItem="Udf-WE-Fgr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="dNK-Pv-hrX"/>
+                    <constraint firstItem="uhF-y9-ula" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="npX-a3-zP2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelDay" destination="NnC-jX-yPV" id="87b-Nn-bic"/>
+                <outlet property="labelWeek" destination="kJx-Af-sM4" id="T9Q-Tv-DEq"/>
+                <outlet property="weather15" destination="wcX-cI-A4U" id="KAa-pw-3wP"/>
+                <outlet property="weather21" destination="XPj-nW-17y" id="Dez-gX-yjY"/>
+                <outlet property="weather3" destination="ZTI-yF-aqA" id="Av7-Uz-P4f"/>
+                <outlet property="weather9" destination="Zsk-jU-NP3" id="Axh-gD-e6R"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="98"/>
+        </tableViewCell>
+    </objects>
+</document>
