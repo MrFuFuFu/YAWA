@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uhF-y9-ula">
-                                <rect key="frame" x="8" y="60" width="274" height="64.5"/>
+                                <rect key="frame" x="8" y="40.5" width="274" height="64.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTI-yF-aqA" customClass="WeatherView" customModule="YAWA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="64.5"/>
@@ -71,7 +71,7 @@
                         <constraints>
                             <constraint firstItem="uhF-y9-ula" firstAttribute="leading" secondItem="FyB-K0-306" secondAttribute="leading" constant="8" id="1we-Af-Il0"/>
                             <constraint firstAttribute="trailing" secondItem="uhF-y9-ula" secondAttribute="trailing" constant="8" id="C3d-wD-HM4"/>
-                            <constraint firstAttribute="bottom" secondItem="uhF-y9-ula" secondAttribute="bottom" constant="15" id="gSi-F7-erR"/>
+                            <constraint firstItem="uhF-y9-ula" firstAttribute="top" secondItem="NnC-jX-yPV" secondAttribute="bottom" constant="12" id="Vib-kb-tZc"/>
                             <constraint firstItem="NnC-jX-yPV" firstAttribute="centerX" secondItem="FyB-K0-306" secondAttribute="centerX" id="yic-tv-fJb"/>
                             <constraint firstItem="NnC-jX-yPV" firstAttribute="top" secondItem="FyB-K0-306" secondAttribute="top" constant="8" id="zCx-Yj-mu6"/>
                         </constraints>

@@ -21,6 +21,8 @@
 		F754FDC1211C057500E20094 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDC0211C057500E20094 /* Date.swift */; };
 		F754FDC3211C082400E20094 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDC2211C082400E20094 /* APIs.swift */; };
 		F754FDC5211C0D0D00E20094 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDC4211C0D0D00E20094 /* Utilities.swift */; };
+		F754FDC9211C3A0100E20094 /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F754FDC8211C39B100E20094 /* weathericons-regular-webfont.ttf */; };
+		F754FDCB211C3A2900E20094 /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDCA211C3A2900E20094 /* WeatherIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		F754FDC0211C057500E20094 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		F754FDC2211C082400E20094 /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		F754FDC4211C0D0D00E20094 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F754FDC8211C39B100E20094 /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
+		F754FDCA211C3A2900E20094 /* WeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 		F754FDAC211BF17400E20094 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				F754FDC8211C39B100E20094 /* weathericons-regular-webfont.ttf */,
 				F754FD99211BEBF800E20094 /* AppDelegate.swift */,
 				F754FDA0211BEBFA00E20094 /* Assets.xcassets */,
 				F754FDA2211BEBFA00E20094 /* LaunchScreen.storyboard */,
@@ -140,6 +145,7 @@
 				F754FDBF211C056B00E20094 /* Extension */,
 				F754FDC2211C082400E20094 /* APIs.swift */,
 				F754FDC4211C0D0D00E20094 /* Utilities.swift */,
+				F754FDCA211C3A2900E20094 /* WeatherIcon.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F754FDC9211C3A0100E20094 /* weathericons-regular-webfont.ttf in Resources */,
 				F754FDB5211BFADC00E20094 /* WeatherView.xib in Resources */,
 				F754FDB3211BF21400E20094 /* WeatherTableViewCell.xib in Resources */,
 				F754FDA4211BEBFA00E20094 /* LaunchScreen.storyboard in Resources */,
@@ -280,6 +287,7 @@
 				F754FDC3211C082400E20094 /* APIs.swift in Sources */,
 				F754FDC1211C057500E20094 /* Date.swift in Sources */,
 				F754FD9A211BEBF800E20094 /* AppDelegate.swift in Sources */,
+				F754FDCB211C3A2900E20094 /* WeatherIcon.swift in Sources */,
 				F754FDBC211BFE7A00E20094 /* ViewController.swift in Sources */,
 				F754FDB9211BFBB600E20094 /* WeatherView.swift in Sources */,
 				F754FDC5211C0D0D00E20094 /* Utilities.swift in Sources */,

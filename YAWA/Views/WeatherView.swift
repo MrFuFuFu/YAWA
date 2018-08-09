@@ -20,9 +20,12 @@ class WeatherView: UIView {
         didSet {
             guard let weather = weather else { return }
             labelTime.text = Date.dateToDayTimeNameString(weather.date)
-            //TODO icon
-            labelWeather.text = weather.icon
-            labelTemp.text = weather.temp
+            
+            labelWeather.text = WeatherIcon(code: weather.icon).iconText
+            let temp = Double(weather.temp)
+            if let tempDouble = temp {
+                labelTemp.text = String(Int(tempDouble)) + "℃"
+            }
             labelDesc.text = weather.desc
         }
     }
