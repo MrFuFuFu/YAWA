@@ -22,6 +22,10 @@ class LocationServices {
         self.locManager.requestWhenInUseAuthorization()
         if authStatus == inUse {
             self.currentLocation = locManager.location
+            if self.currentLocation == nil {
+                completion("Auckland")
+                return
+            }
             let geoCoder = CLGeocoder()
             geoCoder.reverseGeocodeLocation(self.currentLocation) { placemarks, error in
                 if let _ = error {
