@@ -15,12 +15,12 @@ class LocationServices {
     let locManager = CLLocationManager()
     var currentLocation: CLLocation!
     
-    let authStatus = CLLocationManager.authorizationStatus()
     let inUse = CLAuthorizationStatus.authorizedWhenInUse
     
     func getAdress(completion: @escaping (_ region: String) -> ()) {
+        let authStatus = CLLocationManager.authorizationStatus()
         self.locManager.requestWhenInUseAuthorization()
-        if self.authStatus == inUse {
+        if authStatus == inUse {
             self.currentLocation = locManager.location
             let geoCoder = CLGeocoder()
             geoCoder.reverseGeocodeLocation(self.currentLocation) { placemarks, error in

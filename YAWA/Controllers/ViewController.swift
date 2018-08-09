@@ -102,9 +102,7 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: CLLocationManagerDelegate {
     func initLocationService(){
-        let locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        LocationServices.shared.locManager.delegate = self
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
