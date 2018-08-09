@@ -37,7 +37,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="YAWA" id="a0J-hq-6lN">
-                        <barButtonItem key="rightBarButtonItem" title="Now" id="crS-F7-BH6">
+                        <barButtonItem key="rightBarButtonItem" title="Today" id="crS-F7-BH6">
                             <connections>
                                 <action selector="onNowBarBtnClick:" destination="BYZ-38-t0r" id="twp-bn-kPh"/>
                                 <segue destination="rw4-br-gGi" kind="show" identifier="TodayIdentifier" id="Emv-NO-jPl"/>
