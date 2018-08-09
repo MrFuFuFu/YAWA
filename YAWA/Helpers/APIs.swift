@@ -16,7 +16,8 @@ final class APIs {
     private let paramters: String = "?mode=json&units=metric&APPID=399a5bbd96e27a24b8f8c656e8c30ff4"
     
     func requestForecastBy(locality: String, completion: @escaping ([[Weather]]?, Error?) -> Void) {
-        let url = self.url + "forecast" + paramters + "&q=\(locality)"
+        let encodeLocality = locality.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? locality
+        let url = self.url + "forecast" + paramters + "&q=\(encodeLocality)"
         Alamofire.request(url).responseJSON { response in
             switch response.result {
             case .success:
@@ -32,7 +33,8 @@ final class APIs {
     }
     
     func requestTodayBy(locality: String, completion: @escaping (Weather?, Error?) -> Void) {
-        let url = self.url + "weather" + paramters + "&q=\(locality)"
+        let encodeLocality = locality.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? locality
+        let url = self.url + "weather" + paramters + "&q=\(encodeLocality)"
         Alamofire.request(url).responseJSON { response in
             switch response.result {
             case .success:
