@@ -8,12 +8,12 @@
 
 import UIKit
 import CoreLocation
+import Toast_Swift
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
-//    let locationManager = CLLocationManager()
     
     var arrayWeathers: [[Weather]] = []
     
@@ -39,16 +39,18 @@ class ViewController: UIViewController {
     
     private func weatherRequest(locality: String) {
         print("weatherRequest", locality)
+        view.makeToastActivity(.center)
         APIs.shared.requestForecastBy(locality: locality) { [weak self] (arrayWeathers, error) in
             guard let `self` = self else { return }
-            if let arrayWeathers = arrayWeathers {
+            `self`.view.hideToastActivity()
+            if let arrayWeathers = arrayWeathers, arrayWeathers.count > 0 {
                 `self`.title = locality
                 `self`.arrayWeathers = arrayWeathers
                 `self`.tableView.reloadData()
             } else if let error = error {
-                print(error.localizedDescription)
+                `self`.view.makeToast(error.localizedDescription, position: .center)
             } else {
-                print("No result")
+                `self`.view.makeToast(NSLocalizedString("No result", comment:""), position: .center)
             }
         }
     }
@@ -96,5 +98,6 @@ extension ViewController: UISearchBarDelegate {
             return
         }
         weatherRequest(locality: text)
+        searchController.isActive = false
     }
 }

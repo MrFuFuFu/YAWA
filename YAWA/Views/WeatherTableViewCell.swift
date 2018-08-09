@@ -22,6 +22,10 @@ class WeatherTableViewCell: UITableViewCell {
                 if let date = weathers[0].date {
                     labelDay.text = Date.dateToDateString(date)
                 }
+                weatherOvernight.isHidden = true
+                weatherMorning.isHidden = true
+                weatherAfternoon.isHidden = true
+                weatherEvening.isHidden = true
                 
                 weathers.forEach {
                     if let date = $0.date {
@@ -29,12 +33,16 @@ class WeatherTableViewCell: UITableViewCell {
                         switch timeStr {
                         case DayTime.Overnight.rawValue:
                             weatherOvernight.weather = $0
+                            weatherOvernight.isHidden = false
                         case DayTime.Morning.rawValue:
                             weatherMorning.weather = $0
+                            weatherMorning.isHidden = false
                         case DayTime.Afternoon.rawValue:
                             weatherAfternoon.weather = $0
+                            weatherAfternoon.isHidden = false
                         case DayTime.Evening.rawValue:
                             weatherEvening.weather = $0
+                            weatherEvening.isHidden = false
                         default:
                             break
                         }
