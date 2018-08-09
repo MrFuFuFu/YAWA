@@ -13,15 +13,32 @@ import SwiftyJSON
 final class APIs {
     static let shared = APIs()
 //    private let url: String = "http://api.openweathermap.org/data/2.5/forecast?q=Auckland&mode=json&units=metric&APPID=399a5bbd96e27a24b8f8c656e8c30ff4"
-    private let url: String = "http://api.openweathermap.org/data/2.5/forecast?mode=json&units=metric&APPID=399a5bbd96e27a24b8f8c656e8c30ff4"
+    private let url: String = "http://api.openweathermap.org/data/2.5/"
+    private let paramters: String = "?mode=json&units=metric&APPID=399a5bbd96e27a24b8f8c656e8c30ff4"
     
     func requestForecastBy(locality: String, completion: @escaping ([[Weather]]?, Error?) -> Void) {
-        let url = self.url + "&q=\(locality)"
+        let url = self.url + "forecast" + paramters + "&q=\(locality)"
         Alamofire.request(url).responseJSON { response in
             switch response.result {
             case .success:
                 if let result = response.result.value as? [String: AnyObject] {
                     completion(Weather.operatWeather(json: JSON(result)), nil)
+                } else {
+                    completion(nil, nil)
+                }
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    func requestTodayBy(locality: String, completion: @escaping (Weather?, Error?) -> Void) {
+        let url = self.url + "weather" + paramters + "&q=\(locality)"
+        Alamofire.request(url).responseJSON { response in
+            switch response.result {
+            case .success:
+                if let result = response.result.value as? [String: AnyObject] {
+                    completion(Weather.todayWeatherFormate(json: JSON(result)), nil)
                 } else {
                     completion(nil, nil)
                 }

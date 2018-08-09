@@ -29,6 +29,11 @@ class ViewController: UIViewController {
         locationRequest()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     private func locationRequest() {
         LocationServices.shared.getAdress { [weak self] locality in
             guard let `self` = self else { return }
@@ -38,7 +43,6 @@ class ViewController: UIViewController {
     }
     
     private func weatherRequest(locality: String) {
-        print("weatherRequest", locality)
         view.makeToastActivity(.center)
         APIs.shared.requestForecastBy(locality: locality) { [weak self] (arrayWeathers, error) in
             guard let `self` = self else { return }
@@ -55,6 +59,15 @@ class ViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "DetailIdentifier" {
+            guard let detailViewController = segue.destination as? DetailViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            detailViewController.locality = self.title
+        }
+    }
     
 }
 
@@ -75,6 +88,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell?.selectionStyle = .none
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "DetailIdentifier", sender: self)
     }
 }
 

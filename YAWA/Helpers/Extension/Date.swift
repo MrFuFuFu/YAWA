@@ -48,6 +48,13 @@ extension Date {
         return dateFormatter.string(from: date)
     }
     
+    static func dateToTimeDateString(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm, dd MMM"
+        dateFormatter.timeZone = TimeZone.current
+        return dateFormatter.string(from: date)
+    }
+    
     static func isSameDay(date1: Date?, date2: Date?) -> Bool {
         if date1 == nil || date2 == nil{
             return false

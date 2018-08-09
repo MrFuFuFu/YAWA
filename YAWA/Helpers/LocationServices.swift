@@ -31,7 +31,11 @@ class LocationServices {
 //                    let address = "\(placemark?.thoroughfare ?? ""), \(placemark?.locality ?? ""), \(placemark?.subLocality ?? ""), \(placemark?.administrativeArea ?? ""), \(placemark?.postalCode ?? ""), \(placemark?.country ?? "")"
 //                    print(address)
                     let locality = (placemark?.locality != nil ? placemark?.locality : placemark?.administrativeArea) ?? "Auckland"
-                    completion(locality)
+                    if let regionCode = Locale.current.regionCode {
+                        completion(locality + "," + regionCode)
+                    } else {
+                        completion(locality)
+                    }
                 }
             }
         } else {

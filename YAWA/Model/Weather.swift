@@ -9,11 +9,17 @@
 import Foundation
 import SwiftyJSON
 
-final class Weather {
+struct Weather {
     var temp: String
     var icon: String
     var desc: String
     var date: Date?
+    
+    //Other info
+    var pressure: Int?
+    var humidity: Int?
+    var sunrise: String?
+    var sunset: String?
     
     init(temp: String, icon: String, desc: String, date: Date?) {
         self.temp = temp
@@ -23,6 +29,30 @@ final class Weather {
     }
 }
 
+//Today
+extension Weather {
+    static func todayWeatherFormate(json: JSON) -> Weather {
+        let temp = json["main"]["temp"].stringValue
+        var icon: String = "", desc: String = ""
+        let weatherJsonArray = json["weather"].arrayValue
+        if weatherJsonArray.count > 0 {
+            icon = weatherJsonArray[0]["icon"].stringValue
+            desc = weatherJsonArray[0]["main"].stringValue
+        }
+        let date = Date(timeIntervalSince1970: TimeInterval(json["dt"].int32Value))
+        var weather = Weather(temp: temp, icon: icon, desc: desc, date: date)
+        weather.pressure = json["main"]["pressure"].intValue
+        weather.humidity = json["main"]["humidity"].intValue
+        let sunrise = Date(timeIntervalSince1970: TimeInterval(json["sys"]["sunrise"].int32Value))
+        let sunset = Date(timeIntervalSince1970: TimeInterval(json["sys"]["sunset"].int32Value))
+        weather.sunrise = Date.dateToTimeString(sunrise)
+        weather.sunset = Date.dateToTimeString(sunset)
+        
+        return weather
+    }
+}
+
+//Forecast
 extension Weather {
     
     static func operatWeather(json: JSON) -> [[Weather]] {
