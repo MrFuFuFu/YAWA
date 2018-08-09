@@ -75,9 +75,9 @@ extension Weather {
                 icon = weatherJsonArray[0]["icon"].stringValue
                 desc = weatherJsonArray[0]["main"].stringValue
             }
-            let dt_txt = item["dt_txt"].stringValue
+            let dt = Date(timeIntervalSince1970: TimeInterval(item["dt"].int32Value))
             
-            let weather = Weather(temp: temp, icon: icon, desc: desc, date: Date.stringToDate(dt_txt))
+            let weather = Weather(temp: temp, icon: icon, desc: desc, date: dt)
             weathers.append(weather)
         }
         return weathers
