@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         self.navigationItem.searchController = searchController
         self.navigationItem.searchController?.searchBar.delegate = self
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.register(UINib(nibName: "WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "WeatherTableViewCell")
         
         initLocationService()
@@ -79,7 +78,7 @@ class ViewController: UIViewController {
 
 // MARK: TableView Delegate
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayWeathers.count
@@ -97,9 +96,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.selectionStyle = .none
         return cell!
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    }
 }
 
 // MARK: Location delegate
