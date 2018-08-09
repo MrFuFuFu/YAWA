@@ -19,23 +19,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="131.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Udf-WE-Fgr">
-                        <rect key="frame" x="102.5" y="12" width="115.5" height="18"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJx-Af-sM4">
-                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 Aug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnC-jX-yPV">
-                                <rect key="frame" x="75.5" y="0.0" width="40" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 Aug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnC-jX-yPV">
+                        <rect key="frame" x="138" y="12" width="44.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uhF-y9-ula">
                         <rect key="frame" x="12" y="49.5" width="296" height="70"/>
                         <subviews>
@@ -78,19 +67,18 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="uhF-y9-ula" secondAttribute="bottom" constant="12" id="4Pw-A0-u1Y"/>
                     <constraint firstAttribute="trailing" secondItem="uhF-y9-ula" secondAttribute="trailing" constant="12" id="H1t-2X-mdw"/>
-                    <constraint firstItem="Udf-WE-Fgr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="OPO-ZJ-DMX"/>
-                    <constraint firstItem="Udf-WE-Fgr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="dNK-Pv-hrX"/>
+                    <constraint firstItem="NnC-jX-yPV" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="VjA-B4-4fc"/>
                     <constraint firstItem="uhF-y9-ula" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="npX-a3-zP2"/>
+                    <constraint firstItem="NnC-jX-yPV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="pe1-Vt-Hht"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="labelDay" destination="NnC-jX-yPV" id="87b-Nn-bic"/>
-                <outlet property="labelWeek" destination="kJx-Af-sM4" id="T9Q-Tv-DEq"/>
-                <outlet property="weather15" destination="wcX-cI-A4U" id="KAa-pw-3wP"/>
-                <outlet property="weather21" destination="XPj-nW-17y" id="Dez-gX-yjY"/>
-                <outlet property="weather3" destination="ZTI-yF-aqA" id="Av7-Uz-P4f"/>
-                <outlet property="weather9" destination="Zsk-jU-NP3" id="Axh-gD-e6R"/>
+                <outlet property="weatherAfternoon" destination="wcX-cI-A4U" id="Ojz-mN-oG8"/>
+                <outlet property="weatherEvening" destination="XPj-nW-17y" id="2Kd-lJ-Oxe"/>
+                <outlet property="weatherMorning" destination="Zsk-jU-NP3" id="Ph3-iD-RO5"/>
+                <outlet property="weatherOvernight" destination="ZTI-yF-aqA" id="2cG-Kr-OZn"/>
             </connections>
             <point key="canvasLocation" x="34" y="98"/>
         </tableViewCell>

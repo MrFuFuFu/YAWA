@@ -16,6 +16,16 @@ class WeatherView: UIView {
     @IBOutlet weak var labelTemp: UILabel!
     @IBOutlet weak var labelDesc: UILabel!
 
+    var weather: Weather? {
+        didSet {
+            guard let weather = weather else { return }
+            labelTime.text = Date.dateToDayTimeNameString(weather.date)
+            //TODO icon
+            labelWeather.text = weather.icon
+            labelTemp.text = weather.temp
+            labelDesc.text = weather.desc
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

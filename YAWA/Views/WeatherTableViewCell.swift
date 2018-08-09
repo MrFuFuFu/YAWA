@@ -9,12 +9,40 @@
 import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
-    @IBOutlet weak var labelWeek: UILabel!
     @IBOutlet weak var labelDay: UILabel!
-    @IBOutlet weak var weather3: WeatherView!
-    @IBOutlet weak var weather9: WeatherView!
-    @IBOutlet weak var weather15: WeatherView!
-    @IBOutlet weak var weather21: WeatherView!
+    @IBOutlet weak var weatherOvernight: WeatherView!
+    @IBOutlet weak var weatherMorning: WeatherView!
+    @IBOutlet weak var weatherAfternoon: WeatherView!
+    @IBOutlet weak var weatherEvening: WeatherView!
+    
+    var weathers: [Weather]? {
+        didSet {
+            if let weathers = weathers, weathers.count > 0 {
+                if let date = weathers[0].date {
+                    labelDay.text = Date.dateToDateString(date)
+                }
+                
+                weathers.forEach {
+                    if let date = $0.date {
+                        let timeStr = Date.dateToTimeString(date)
+                        switch timeStr {
+                        case DayTime.Overnight.rawValue:
+                            weatherOvernight.weather = $0
+                        case DayTime.Morning.rawValue:
+                            weatherMorning.weather = $0
+                        case DayTime.Afternoon.rawValue:
+                            weatherAfternoon.weather = $0
+                        case DayTime.Evening.rawValue:
+                            weatherEvening.weather = $0
+                        default:
+                            break
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
