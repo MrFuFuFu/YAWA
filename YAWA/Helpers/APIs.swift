@@ -12,7 +12,6 @@ import SwiftyJSON
 
 final class APIs {
     static let shared = APIs()
-//    private let url: String = "http://api.openweathermap.org/data/2.5/forecast?q=Auckland&mode=json&units=metric&APPID=399a5bbd96e27a24b8f8c656e8c30ff4"
     private let url: String = "http://api.openweathermap.org/data/2.5/"
     private let paramters: String = "?mode=json&units=metric&APPID=399a5bbd96e27a24b8f8c656e8c30ff4"
     

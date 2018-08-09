@@ -30,6 +30,8 @@ class TodayViewController: UIViewController {
         requestToday()
     }
     
+    // MARK: Request
+    
     private func requestToday() {
         self.view.makeToastActivity(.center)
         rootView.isHidden = true
@@ -48,6 +50,7 @@ class TodayViewController: UIViewController {
             }
         }
     }
+    
     private func setToViews(weather: Weather) {
         labelLocality.text = locality
         if let date = weather.date {
