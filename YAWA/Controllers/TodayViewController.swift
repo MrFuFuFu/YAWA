@@ -1,15 +1,14 @@
 //
-//  DetailViewController.swift
+//  TodayViewController.swift
 //  YAWA
 //
-//  Created by Fu Yuan on 9/08/18.
+//  Created by Fu Yuan on 10/08/18.
 //  Copyright © 2018 MEA Test. All rights reserved.
 //
 
 import UIKit
-import Toast_Swift
 
-class DetailViewController: UIViewController {
+class TodayViewController: UIViewController {
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var labelLocality: UILabel!
     @IBOutlet weak var labelDate: UILabel!
@@ -23,10 +22,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var labelIssued: UILabel!
     
     var locality: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationItem.largeTitleDisplayMode = .never
+        
         requestToday()
     }
     

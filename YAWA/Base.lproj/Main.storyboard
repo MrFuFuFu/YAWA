@@ -36,20 +36,26 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="YAWA" id="a0J-hq-6lN"/>
+                    <navigationItem key="navigationItem" title="YAWA" id="a0J-hq-6lN">
+                        <barButtonItem key="rightBarButtonItem" title="Now" id="crS-F7-BH6">
+                            <connections>
+                                <action selector="onNowBarBtnClick:" destination="BYZ-38-t0r" id="twp-bn-kPh"/>
+                                <segue destination="rw4-br-gGi" kind="show" identifier="TodayIdentifier" id="Emv-NO-jPl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YFp-Ky-q4i" id="S9q-Ge-xDy"/>
-                        <segue destination="rw4-br-gGi" kind="show" identifier="DetailIdentifier" id="T2Z-OX-AIg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1168.8" y="-564.46776611694156"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Today View Controller-->
         <scene sceneID="7kp-yu-5or">
             <objects>
-                <viewController id="rw4-br-gGi" customClass="DetailViewController" customModule="YAWA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rw4-br-gGi" customClass="TodayViewController" customModule="YAWA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mLJ-W5-duU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

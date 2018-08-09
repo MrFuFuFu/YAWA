@@ -29,10 +29,7 @@ class ViewController: UIViewController {
         locationRequest()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
+    // MARK: request
     
     private func locationRequest() {
         LocationServices.shared.getAdress { [weak self] locality in
@@ -59,17 +56,28 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: Prepare segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if segue.identifier == "DetailIdentifier" {
-            guard let detailViewController = segue.destination as? DetailViewController else {
+        if segue.identifier == "TodayIdentifier" {
+            guard let todayViewController = segue.destination as? TodayViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            detailViewController.locality = self.title
+            todayViewController.locality = self.title
         }
     }
     
+    // MARK: Action
+    
+    @IBAction func onNowBarBtnClick(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "TodayIdentifier", sender: self)
+    }
+    
+    
 }
+
+// MARK: TableView Delegate
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
@@ -90,10 +98,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "DetailIdentifier", sender: self)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    }
 }
+
+// MARK: Location delegate
 
 extension ViewController: CLLocationManagerDelegate {
     func initLocationService(){
@@ -108,6 +117,8 @@ extension ViewController: CLLocationManagerDelegate {
         }
     }
 }
+
+// MARK: SearchBar delegate
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

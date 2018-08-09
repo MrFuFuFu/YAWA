@@ -24,7 +24,7 @@
 		F754FDC9211C3A0100E20094 /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F754FDC8211C39B100E20094 /* weathericons-regular-webfont.ttf */; };
 		F754FDCB211C3A2900E20094 /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDCA211C3A2900E20094 /* WeatherIcon.swift */; };
 		F754FDCD211C448600E20094 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDCC211C448600E20094 /* LocationServices.swift */; };
-		F754FDCF211C58FF00E20094 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDCE211C58FF00E20094 /* DetailViewController.swift */; };
+		F754FDD1211C74F400E20094 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754FDD0211C74F400E20094 /* TodayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,7 @@
 		F754FDC8211C39B100E20094 /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 		F754FDCA211C3A2900E20094 /* WeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
 		F754FDCC211C448600E20094 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
-		F754FDCE211C58FF00E20094 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F754FDD0211C74F400E20094 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				F754FDBB211BFE7A00E20094 /* ViewController.swift */,
-				F754FDCE211C58FF00E20094 /* DetailViewController.swift */,
+				F754FDD0211C74F400E20094 /* TodayViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -291,7 +291,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F754FDCF211C58FF00E20094 /* DetailViewController.swift in Sources */,
 				F754FDB2211BF21400E20094 /* WeatherTableViewCell.swift in Sources */,
 				F754FDC3211C082400E20094 /* APIs.swift in Sources */,
 				F754FDC1211C057500E20094 /* Date.swift in Sources */,
@@ -299,6 +298,7 @@
 				F754FDCB211C3A2900E20094 /* WeatherIcon.swift in Sources */,
 				F754FDBC211BFE7A00E20094 /* ViewController.swift in Sources */,
 				F754FDB9211BFBB600E20094 /* WeatherView.swift in Sources */,
+				F754FDD1211C74F400E20094 /* TodayViewController.swift in Sources */,
 				F754FDC5211C0D0D00E20094 /* Utilities.swift in Sources */,
 				F754FDCD211C448600E20094 /* LocationServices.swift in Sources */,
 				F754FDBE211C022A00E20094 /* Weather.swift in Sources */,
